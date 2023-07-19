@@ -11,8 +11,8 @@ pipeline {
 			sh ''' 
   			 rm -rf *
 			sudo yum install docker -y
-			systemctl  start docker
-			systemctl enable docker
+			sudo systemctl  start docker
+			sudo systemctl enable docker
 			'''
 			}
 				}
