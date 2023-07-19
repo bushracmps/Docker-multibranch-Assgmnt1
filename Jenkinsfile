@@ -19,13 +19,12 @@ pipeline {
 			steps { 
 				sh '''
 				rm -rf *
-				git clone https://github.com/pritam-jagtap/multibranch-project.git -b 23Q1
+				git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git
 				docker pull httpd
-    				// docker stop 23Q1 ( use when only required)
-    				// docker rm 23Q1    ( use when only required)
-				chmod -R 777 /tmp/multibranch-project/index.html
+    			
+				chmod -R 777 /Docker-multibranch-Assgmnt1/multibranch-project/index.html
 				docker run -itdp 80:80 --name 23Q1 httpd
-				docker cp /tmp/multibranch-project/index.html 23Q1:/usr/local/apache2/htdocs
+				docker cp /Docker-multibranch-Assgmnt1/multibranch-project/index.html master:/usr/local/apache2/htdocs
   				'''
 				}
 				}
