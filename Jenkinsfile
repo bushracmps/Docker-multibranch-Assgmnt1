@@ -38,6 +38,7 @@ pipeline {
 				sudo cd velocity/
 				sudo git init
 				sudo echo "Hello All " >> /root/docker/velocity/index.html
+                                sudo chmod -R /root/docker
 				sudo chmod 777 /root/docker/velocity/index.html
 				sudo git add index.html
 				sudo git commit -m "Change detected" 23Q1
