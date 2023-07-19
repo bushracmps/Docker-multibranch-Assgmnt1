@@ -2,7 +2,7 @@
 	agent {
 		label {
 		label "slave1"
-		customWorkspace "/tmp"
+		customWorkspace "/root/docker"
 		}
 	}
 	stages {
