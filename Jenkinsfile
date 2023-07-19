@@ -35,7 +35,7 @@ pipeline {
 				sh '''
 				sudo cd /root/docker
 				sudo mkdir velocity
-				sudo cd velocity/
+				sudo cd velocity
 				sudo git init
                                 sudo chmod -R 777 /root/docker/velocity
 				sudo echo "Hello All " >> /root/docker/velocity/index.html
