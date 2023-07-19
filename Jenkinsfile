@@ -1,7 +1,7 @@
  pipeline {
 	agent {
 		label {
-		label "built-in"
+		label "slave1"
 		customWorkspace "/tmp"
 		}
 	}
@@ -20,13 +20,13 @@
 			steps { 
 				sh '''
 				rm -rf *
-				git clone  -b 23Q3
+				git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git -b 23Q3
 				docker pull httpd
     				docker stop 23Q3
     				docker rm 23Q3
 				chmod -R 777 /tmp/multibranch-project/index.html
 				docker run -itdp 8081:80 --name 23Q3 httpd
-				docker cp /tmp/multibranch-project/index.html 23Q3:/usr/local/apache2/htdocs
+				docker cp /tmp/Docker-multibranch-Assgmnt1/index.html 23Q3:/usr/local/apache2/htdocs
   				'''
 				}
 				}
