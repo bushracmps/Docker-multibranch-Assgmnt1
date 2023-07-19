@@ -36,7 +36,6 @@ pipeline {
         		success {
 				sh '''
 				 sudo docker stop 23Q1
-				sudo docker rm 23Q1
 				sudo docker run -itdp 70:80 --name c1 httpd
 				'''
 
