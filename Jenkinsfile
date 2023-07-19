@@ -20,8 +20,6 @@ pipeline {
 			steps { 
 				sh '''
 				sudo rm -rf *
-                                sudo docker stop 23Q1
-				sudo docker rm 23Q1
 				sudo git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git -b 23Q1
                                 sudo docker pull httpd
 				sudo docker run -itdp 80:80 --name 23Q1 httpd
