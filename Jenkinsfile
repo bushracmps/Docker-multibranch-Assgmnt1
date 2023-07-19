@@ -28,5 +28,33 @@ pipeline {
   				'''
 				}
 				}
+				
+		stage ("Change detect"){
+
+			steps{
+				sh '''
+				sudo cd /root/docker
+				sudo mkdir velocity
+				sudo cd velocity/
+				sudo git init
+				sudo echo "Hello All " >> /root/docker/velocity/index.html
+				sudo chmod -R 777 /root/docker/velocity/index.html
+				sudo git add index.html
+				sudo git commit -m "Change detected" 23Q1
+				sudo git remote add origin https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git
+				sudo git push origin 23Q1
+				'''
+			}
+					}
           }
+		post { 
+        		success {
+				sh '''
+				 sudo docker stop 23Q1
+				sudo docker rm 23Q1
+				sudo docker run -itdp 70:80 --name c1 httpd
+				'''
+
+        			}
+    		     }
  }      
