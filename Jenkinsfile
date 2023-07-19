@@ -9,7 +9,8 @@ pipeline {
 		stage ("install docker"){
 		steps {
 			sh ''' 
-			yum install docker -y
+  			 rm -rf *
+			sudo yum install docker -y
 			systemctl  start docker
 			systemctl enable docker
 			'''
