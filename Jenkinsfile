@@ -23,7 +23,7 @@ pipeline {
 				sudo git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git -b 23Q2
 				sudo docker pull httpd
     				
-    				docker rm 23Q2
+    				sudo docker rm 23Q2
 				sudo docker run -itdp 90:80 --name 23Q2 httpd
     				sudo chmod -R 777 /root/docker/Docker-multibranch-Assgmnt1/index.html
 				sudo docker cp /root/docker/Docker-multibranch-Assgmnt1/index.html 23Q2:/usr/local/apache2/htdocs
