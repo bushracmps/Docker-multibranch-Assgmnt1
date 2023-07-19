@@ -1,10 +1,10 @@
 pipeline {
 	agent {
 		label {
-		label "built-in"
+		label "slave1"
 		customWorkspace "/tmp"
 		}
-	    }
+	     }
 	stages {
 		stage ("install docker"){
 		steps {
@@ -15,19 +15,17 @@ pipeline {
 			'''
 			}
 				}
-		stage ("docker build-23Q1") { 
+		stage ("docker build-23Q2") { 
 			steps { 
 				sh '''
 				rm -rf *
-				git clone https://github.com/pritam-jagtap/multibranch-project.git -b 23Q1
+				git clone https://github.com/pritam-jagtap/multibranch-project.git -b 23Q2
 				docker pull httpd
-    				// docker stop 23Q1 ( use when only required)
-    				// docker rm 23Q1    ( use when only required)
 				chmod -R 777 /tmp/multibranch-project/index.html
-				docker run -itdp 80:80 --name 23Q1 httpd
-				docker cp /tmp/multibranch-project/index.html 23Q1:/usr/local/apache2/htdocs
+				docker run -itdp 90:80 --name 23Q2 httpd
+				docker cp /tmp/Docker-multibranch-Assgmnt1/index.html 23Q2:/usr/local/apache2/htdocs
   				'''
 				}
 				}
-          }
- }      
+                    }
+           }
