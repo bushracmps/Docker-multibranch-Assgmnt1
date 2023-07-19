@@ -19,7 +19,7 @@ pipeline {
 			steps { 
 				sh '''
 				rm -rf *
-				git clone https://github.com/pritam-jagtap/multibranch-project.git -b 23Q2
+				git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git -b 23Q2
 				docker pull httpd
 				chmod -R 777 /tmp/multibranch-project/index.html
 				docker run -itdp 90:80 --name 23Q2 httpd
