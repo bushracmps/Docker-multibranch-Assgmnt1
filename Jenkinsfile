@@ -1,7 +1,7 @@
 pipeline {
 	agent {
 		label {
-		label "built-in"
+		label "slave1"
 		customWorkspace "/tmp"
 		}
 	    }
@@ -19,7 +19,7 @@ pipeline {
 			steps { 
 				sh '''
 				rm -rf *
-				git clone https://github.com/pritam-jagtap/multibranch-project.git -b 23Q1
+				git clone  -b 23Q1
 				docker pull httpd
     				// docker stop 23Q1 ( use when only required)
     				// docker rm 23Q1    ( use when only required)
