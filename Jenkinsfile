@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		label {
 		label "slave1"
-		customWorkspace "/tmp"
+		customWorkspace "/root/docker"
 		}
 	    }
 	stages {
@@ -23,7 +23,7 @@ pipeline {
 				docker pull httpd
 				chmod -R 777 /tmp/multibranch-project/index.html
 				docker run -itdp 80:80 --name 23Q1 httpd
-				docker cp /tmp/Docker-multibranch-Assgmnt1/index.html 23Q1:/usr/local/apache2/htdocs
+				docker cp /root/docker/Docker-multibranch-Assgmnt1/index.html 23Q1:/usr/local/apache2/htdocs
   				'''
 				}
 				}
