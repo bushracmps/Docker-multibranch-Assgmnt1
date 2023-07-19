@@ -21,7 +21,7 @@ pipeline {
 				rm -rf *
 				git clone https://github.com/bushracmps/Docker-multibranch-Assgmnt1.git -b 23Q1
 				docker pull httpd
-				chmod -R 777 /root/docker/multibranch-project/index.html
+				chmod -R 777 /root/docker/Docker-multibranch-Assgmnt1/index.html
 				docker run -itdp 80:80 --name 23Q1 httpd
 				docker cp /root/docker/Docker-multibranch-Assgmnt1/index.html 23Q1:/usr/local/apache2/htdocs
   				'''
